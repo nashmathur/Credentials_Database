@@ -3,19 +3,35 @@
 <html>
 <head>
 	<title> Credentials Database </title>
+	
+	<link rel="stylesheet" type="text/css" href="Home.css">
 </head>
 <body>
-	<p>Welcome to Credentials Database!</p>
+	<p id="welcome">Welcome to Credentials Database!</p>
+	
+	<form method="post" action="">
+                <fieldset>
+                <legend>Sign Up</legend>
+			<p>Name:</p>
+			<input type="text" name="name" placeholder="Name"><br>
+                        <p>Username:</p>
+			<input type="text" name="username" placeholder="Username"><br>
+                        <p>Password:</p>
+                        <input type="password" name="pwd" placeholder="Password"><br><br>
+                        <input type="submit" value="Submit">
+                </fieldset>
+        </form>
 
-	<form>
+	<form action="/home/natansh/Credentials_Database/login.php" method="post"> 
 		<fieldset>
 		<legend>Login</legend>
-			Username:<br>
-			<input type="text" name="username" placeholder="username"><br>
-			Password:<br>
+			<p>Username:</p>
+			<input type="text" name="username" placeholder="Username"><br>
+			<p>Password:</p>
 			<input type="password" name="pwd" placeholder="Password"><br><br>
 			<input type="submit" value="Submit">
 		</fieldset>
 	</form>
+
 </body>
 </html>
