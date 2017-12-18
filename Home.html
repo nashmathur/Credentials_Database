@@ -9,7 +9,7 @@
 <body>
 	<p id="welcome">Welcome to Credentials Database!</p>
 	
-	<form method="post" action="">
+	<form method="post" action="/Credentials_Database/signup.php">
                 <fieldset>
                 <legend>Sign Up</legend>
 			<p>Name:</p>
@@ -17,12 +17,14 @@
                         <p>Username:</p>
 			<input type="text" name="username" placeholder="Username"><br>
                         <p>Password:</p>
-                        <input type="password" name="pwd" placeholder="Password"><br><br>
+                        <input type="password" name="password" placeholder="Password"><br>
+			<p>E-mail ID:</p>
+			<input type="text" name="email" placeholder="Like user123@example.com"><br><br>
                         <input type="submit" value="Submit">
                 </fieldset>
         </form>
 
-	<form action="/home/natansh/Credentials_Database/login.php" method="post"> 
+	<form action="/Credentials_Database/login.php" method="post"> 
 		<fieldset>
 		<legend>Login</legend>
 			<p>Username:</p>
