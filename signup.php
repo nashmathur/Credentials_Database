@@ -10,7 +10,7 @@
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){
 			$name = $_POST["name"];
 			$username = $_POST["username"];
-                	$password = $_POST["password"];
+                	$password = htmlspecialchars($_POST["password"]);
 			$email = $_POST["email"];
 
 			$sql1 = "INSERT INTO login (name, username, password, email) VALUES ('".$name."', '".$username."', '".$password."', '".$email."');";
