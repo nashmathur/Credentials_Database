@@ -3,7 +3,7 @@
 <head>
 	<title> Your Credentials</title>
 	<link rel="stylesheet" type="text/css" href="user.css"> 	
-	</head>
+</head>
 <body>
 
 <?php
@@ -11,13 +11,18 @@
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		$username = $_POST["username"];
-		$password = htmlspecialchars($_POST["pwd"]);
+		$password = $_POST["password"];
 		$sql = "SELECT username FROM login WHERE username='" . $username . "' and password='".$password."';";
 	}
 	
+	if (isset($_SESSION['username'])){
+		$username = $_SESSION['username'];
+	}	
+
 	if ($conn->query($sql)) {
 		session_start();
 		$_SESSION["username"]=$username;
+		$_SESSION["password"]=$password;
 		$abc = "SELECT id, org, acc, email, customerID, loginpwd, transactionpwd, PIN FROM ".$username.";";
 		$result = $conn->query($abc);
 	
@@ -35,8 +40,9 @@
 			<button type="submit" formaction="./Add.php">Add</button>
 			<button type="submit">Delete</button>
 			<input type="hidden" name="username" value="'.$username.'">
-			<input type="hidden" name="pwd" value="'.$password.'">
+			<input type="hidden" name="password" value="'.$password.'">
 		</form></center>';
+		echo "<a href='logout.php'>Logout</a>";
 		
 		$del = "DELETE FROM ".$username." WHERE id = ".$_POST['ID'].";";
 		$resultdel = $conn->query($del);

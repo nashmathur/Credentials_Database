@@ -47,7 +47,7 @@
 
 	echo '<form action="./login.php" method="post">
 		<input type="hidden" name="username" value="'.$username.'"/>
-		<input type="hidden" name="pwd"  value="'.$password.'"/>
+		<input type="hidden" name="password"  value="'.$password.'"/>
 		<input type="submit" value="Back"/>
 	</form>';
 
