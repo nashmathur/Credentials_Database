@@ -1,3 +1,4 @@
 Here are the bugs to be resolved:
   1. Add button doesn't work if there are 0 records.
   2. Delete button deletes the selected record from the database but the record is removed from display next time the page loads.
+  3. Upon logging with any username-password, instaed of "Invalid username/password", it is being displayed as if an existing user with 0 records is logging in. 
