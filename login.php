@@ -19,7 +19,7 @@
 		$username = $_SESSION['username'];
 	}	
 
-	if ($conn->query($sql)) {
+	if ($conn->query($sql) === true) {
 		session_start();
 		$_SESSION["username"]=$username;
 		$_SESSION["password"]=$password;
